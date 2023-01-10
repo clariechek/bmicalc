@@ -9,6 +9,10 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int _gender = 0;
+  int _height = 150;
+  int _weight = 50;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,9 +29,25 @@ class _HomeState extends State<Home> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              GenderWidget(),
-              HeightWidget(),
-              WeightWidget(),
+              GenderWidget(
+                onChange: (genderVal) {
+                  _gender = genderVal;
+                },
+              ),
+              HeightWidget(
+                onChange: (heightVal) {
+                  _height = heightVal;
+                },
+              ),
+              WeightWidget(
+                  onChange: (weightVal) {
+                    _weight = weightVal;
+                  },
+                  title: "Weight (kg)",
+                  initValue: 50,
+                  min: 0,
+                  max: 200),
+
               // calculate
               // results page
             ],
