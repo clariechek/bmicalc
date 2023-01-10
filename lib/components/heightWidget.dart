@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:input_slider/input_slider.dart';
 
 class HeightWidget extends StatefulWidget {
-  final Function(int) onChange;
+  final Function(double) onChange;
 
   const HeightWidget({Key? key, required this.onChange}) : super(key: key);
 
@@ -11,37 +11,47 @@ class HeightWidget extends StatefulWidget {
 }
 
 class _HeightWidgetState extends State<HeightWidget> {
+  double _height = 150.0;
+
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 10,
-      shape: const RoundedRectangleBorder(),
-      color: const Color.fromARGB(255, 60, 80, 165),
-      child: Column(
-        children: [
-          Text(
-            "Height (cm)",
-            style: const TextStyle(
-                fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+    return Container(
+        height: 150,
+        child: Card(
+          elevation: 10,
+          shape: const RoundedRectangleBorder(),
+          color: const Color.fromARGB(255, 60, 80, 165),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(padding: EdgeInsets.only(top: 10)),
+              Text(
+                "Height (cm)",
+                style: const TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
+              InputSlider(
+                onChange: (double value) {
+                  setState(() {
+                    print("change: $value");
+                    _height = value;
+                  });
+                  widget.onChange(_height);
+                },
+                min: 0.0,
+                max: 240.0,
+                decimalPlaces: 1,
+                defaultValue: 150.0,
+                textFieldStyle: const TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                ),
+                leading: Icon(Icons.height, size: 80),
+              ),
+            ],
           ),
-          InputSlider(
-            onChange: (double value) {
-              setState(() {
-                print("change: $value");
-              });
-            },
-            min: 0.0,
-            max: 240.0,
-            decimalPlaces: 1,
-            defaultValue: 150.0,
-            textFieldStyle: const TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-            ),
-            leading: Icon(Icons.height),
-          ),
-        ],
-      ),
-    );
+        ));
   }
 }
