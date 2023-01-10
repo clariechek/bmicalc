@@ -1,3 +1,4 @@
+import 'package:bmicalc/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:input_slider/input_slider.dart';
 
@@ -18,7 +19,7 @@ class _WeightWidgetState extends State<WeightWidget> {
     return Container(
         height: 150,
         child: Card(
-            color: const Color.fromARGB(255, 60, 80, 165),
+            color: darkBlue,
             elevation: 10,
             shape: const RoundedRectangleBorder(),
             child: Column(
@@ -27,10 +28,7 @@ class _WeightWidgetState extends State<WeightWidget> {
                 Padding(padding: EdgeInsets.only(top: 10)),
                 Text(
                   "Weight (kg)",
-                  style: const TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
+                  style: widgetTextStyle,
                 ),
                 InputSlider(
                   onChange: (double value) {
@@ -44,10 +42,7 @@ class _WeightWidgetState extends State<WeightWidget> {
                   max: 200.0,
                   decimalPlaces: 1,
                   defaultValue: 50.0,
-                  textFieldStyle: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
+                  textFieldStyle: widgetTextStyle,
                   leading: Icon(Icons.monitor_weight, size: 80),
                 ),
               ],

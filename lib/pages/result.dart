@@ -1,3 +1,4 @@
+import 'package:bmicalc/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:pretty_gauge/pretty_gauge.dart';
 import 'package:share_plus/share_plus.dart';
@@ -20,7 +21,7 @@ class Result extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: const Text("BMI Results"),
-        backgroundColor: const Color.fromARGB(255, 60, 80, 165),
+        backgroundColor: darkBlue,
       ),
       body: Container(
           padding: const EdgeInsets.all(12),
@@ -32,7 +33,7 @@ class Result extends StatelessWidget {
                   children: [
                     const Text(
                       "Your BMI",
-                      style: TextStyle(fontSize: 30),
+                      style: bmiHeaderTextStyle,
                     ),
                     const SizedBox(
                       height: 10,
@@ -49,24 +50,24 @@ class Result extends StatelessWidget {
                       ],
                       valueWidget: Text(
                         bmi.toStringAsFixed(1),
-                        style: const TextStyle(fontSize: 40),
+                        style: bmiResultTextStyle,
                       ),
                       currentValue: bmi.toDouble(),
-                      needleColor: Colors.blue,
+                      needleColor: darkBlue,
                     ),
                     const SizedBox(
                       height: 10,
                     ),
                     Text(
                       bmiStatus!,
-                      style: TextStyle(fontSize: 20, color: bmiStatusColor!),
+                      style: TextStyle(fontSize: 30, color: bmiStatusColor!),
                     ),
                     const SizedBox(
                       height: 10,
                     ),
                     Text(
                       bmiInterpretation!,
-                      style: const TextStyle(fontSize: 15),
+                      style: bmiMessageTextStyle,
                     ),
                     const SizedBox(
                       height: 10,
@@ -79,10 +80,9 @@ class Result extends StatelessWidget {
                               Navigator.pop(context);
                             },
                             style: ElevatedButton.styleFrom(
-                                backgroundColor:
-                                    const Color.fromARGB(255, 60, 80, 165)),
+                                backgroundColor: darkBlue),
                             child: const Text("Re-calculate",
-                                style: TextStyle(fontSize: 20))),
+                                style: bmiMessageTextStyle)),
                         const SizedBox(
                           width: 10,
                         ),
@@ -92,10 +92,9 @@ class Result extends StatelessWidget {
                                   "Your BMI is ${bmi.toStringAsFixed(1)}");
                             },
                             style: ElevatedButton.styleFrom(
-                                backgroundColor:
-                                    const Color.fromARGB(255, 60, 80, 165)),
+                                backgroundColor: darkBlue),
                             child: const Text("Share",
-                                style: TextStyle(fontSize: 20))),
+                                style: bmiMessageTextStyle)),
                       ],
                     )
                   ]))),

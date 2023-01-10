@@ -1,3 +1,4 @@
+import 'package:bmicalc/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:input_slider/input_slider.dart';
 
@@ -20,17 +21,14 @@ class _HeightWidgetState extends State<HeightWidget> {
         child: Card(
           elevation: 10,
           shape: const RoundedRectangleBorder(),
-          color: const Color.fromARGB(255, 60, 80, 165),
+          color: darkBlue,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(padding: EdgeInsets.only(top: 10)),
               Text(
                 "Height (cm)",
-                style: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
+                style: widgetTextStyle,
               ),
               InputSlider(
                 onChange: (double value) {
@@ -44,10 +42,7 @@ class _HeightWidgetState extends State<HeightWidget> {
                 max: 240.0,
                 decimalPlaces: 1,
                 defaultValue: 150.0,
-                textFieldStyle: const TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                ),
+                textFieldStyle: widgetTextStyle,
                 leading: Icon(Icons.height, size: 80),
               ),
             ],

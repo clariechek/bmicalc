@@ -2,6 +2,7 @@
 import 'package:bmicalc/components/genderWidget.dart';
 import 'package:bmicalc/components/heightWidget.dart';
 import 'package:bmicalc/components/weightWidget.dart';
+import 'package:bmicalc/constants.dart';
 import 'package:bmicalc/pages/result.dart';
 import 'package:flutter/material.dart';
 import 'package:swipeable_button_view/swipeable_button_view.dart';
@@ -25,10 +26,10 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 60, 80, 165),
+        backgroundColor: darkBlue,
         title: const Text(
           "BMI Calculator",
-          style: TextStyle(fontSize: 30, color: Colors.white),
+          style: appBarHeaderTextStyle,
         ),
       ),
       body: Container(
@@ -81,16 +82,13 @@ class _HomeState extends State<Home> {
                       });
                     });
                   },
-                  activeColor: const Color.fromARGB(255, 60, 80, 165),
+                  activeColor: darkBlue,
                   buttonWidget: const Icon(
                     Icons.arrow_forward_ios_rounded,
-                    color: Color.fromARGB(255, 60, 80, 165),
+                    color: darkBlue,
                   ),
                   buttonText: "CALCULATE",
-                  buttontextstyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
+                  buttontextstyle: calculateTextStyle,
                 ),
               )
             ],
