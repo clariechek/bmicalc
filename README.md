@@ -1,14 +1,20 @@
-BMI Calculator made with Flutter that can switch between dark and light modes.
+BMI Calculator made with Flutter that can switch between dark and light mode.
 
-Light mode:
-![Simulator Screen Shot - iPhone 14 Pro Max - 2023-01-10 at 21 24 39](https://user-images.githubusercontent.com/44283405/211688660-eb124ec4-50ed-4874-b02e-1b624df23a68.png)
+*Light mode:*
 
-![Simulator Screen Shot - iPhone 14 Pro Max - 2023-01-11 at 10 39 27](https://user-images.githubusercontent.com/44283405/211688733-018b8724-700a-455d-986a-8893daf4cc4a.png)
+![Screenshot 2023-01-11 at 10 51 09 AM](https://user-images.githubusercontent.com/44283405/211689386-481f12a9-a97f-4209-9b4a-7fbd8ebdc13f.png)
 
-Dark mode:
-![Simulator Screen Shot - iPhone 14 Pro Max - 2023-01-11 at 10 38 52](https://user-images.githubusercontent.com/44283405/211688747-dd2f0a7f-cfd4-40fc-9105-dfe789a7caf9.png)
 
-![Simulator Screen Shot - iPhone 14 Pro Max - 2023-01-11 at 10 39 35](https://user-images.githubusercontent.com/44283405/211688759-0b3b0e72-7862-4d96-ab9c-b6917c36c9f9.png)
+*Dark mode:*
+
+![Screenshot 2023-01-11 at 10 53 48 AM](https://user-images.githubusercontent.com/44283405/211689628-790a4baf-252b-45c2-87aa-3bd28d76ae3c.png)
+
+
+*App video:*
+
+
+
+https://user-images.githubusercontent.com/44283405/211689650-3e3e93ef-2567-4d98-873b-a3b8156c5b92.mov
 
 
 
