@@ -2,9 +2,12 @@
 import 'package:bmicalc/components/genderWidget.dart';
 import 'package:bmicalc/components/heightWidget.dart';
 import 'package:bmicalc/components/weightWidget.dart';
+import 'package:bmicalc/config.dart';
 import 'package:bmicalc/constants.dart';
 import 'package:bmicalc/pages/result.dart';
+import 'package:bmicalc/themeStateNotifier.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:swipeable_button_view/swipeable_button_view.dart';
 import 'package:page_transition/page_transition.dart';
 import 'dart:math';
@@ -21,6 +24,8 @@ class _HomeState extends State<Home> {
   bool _isFinished = false;
   double _bmi = 0;
 
+  bool _isDark = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +36,14 @@ class _HomeState extends State<Home> {
           "BMI Calculator",
           style: appBarHeaderTextStyle,
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                _isDark = currentTheme.switchTheme();
+              },
+              icon:
+                  Icon(_isDark ? Icons.nightlight : Icons.nightlight_outlined))
+        ],
       ),
       body: Container(
           padding: const EdgeInsets.all(20),
@@ -65,6 +78,7 @@ class _HomeState extends State<Home> {
                         PageTransition(
                             child: Result(
                               bmi: _bmi,
+                              isDark: _isDark,
                             ),
                             type: PageTransitionType.fade));
 
@@ -100,3 +114,18 @@ class _HomeState extends State<Home> {
     _bmi = _weight / pow(_height / 100, 2);
   }
 }
+
+// class ThemeIconButton extends ConsumerWidget {
+//   const ThemeIconButton({super.key});
+
+//   get isDark => ThemeStateNotifier();
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return IconButton(
+//         onPressed: () {
+//           currentTheme.switchTheme();
+//         },
+//         icon: Icon(isDark ? Icons.nightlight : Icons.nightlight_outlined));
+//   }
+// }

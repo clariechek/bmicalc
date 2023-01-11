@@ -8,7 +8,8 @@ const appBarHeaderTextStyle = TextStyle(fontSize: 30, color: Colors.white);
 const widgetTextStyle =
     TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold);
 
-const genderTextStyle = TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
+const genderTextStyle =
+    TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black);
 
 const calculateTextStyle =
     TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold);
@@ -18,6 +19,10 @@ const bmiHeaderTextStyle = TextStyle(fontSize: 30);
 const bmiResultTextStyle = TextStyle(fontSize: 40);
 
 const bmiMessageTextStyle = TextStyle(fontSize: 20);
+
+const gaugeMarkerLightTextStyle = TextStyle(fontSize: 15, color: Colors.black);
+
+const gaugeMarkerDarkTextStyle = TextStyle(fontSize: 15, color: Colors.white);
 
 final choiceChipSelectedStyle = ChoiceChip3DStyle(
     topColor: Colors.grey[200]!,

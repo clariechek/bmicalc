@@ -6,13 +6,15 @@ import 'package:share_plus/share_plus.dart';
 class Result extends StatelessWidget {
   final double bmi;
 
+  final bool isDark;
+
   String? bmiStatus;
 
   String? bmiInterpretation;
 
   Color? bmiStatusColor;
 
-  Result({Key? key, required this.bmi}) : super(key: key);
+  Result({Key? key, required this.bmi, required this.isDark}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +56,12 @@ class Result extends StatelessWidget {
                       ),
                       currentValue: bmi.toDouble(),
                       needleColor: darkBlue,
+                      startMarkerStyle: isDark
+                          ? gaugeMarkerDarkTextStyle
+                          : gaugeMarkerLightTextStyle,
+                      endMarkerStyle: isDark
+                          ? gaugeMarkerDarkTextStyle
+                          : gaugeMarkerLightTextStyle,
                     ),
                     const SizedBox(
                       height: 10,
