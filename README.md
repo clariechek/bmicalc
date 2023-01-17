@@ -1,4 +1,6 @@
-BMI Calculator made with Flutter that can switch between dark and light mode.
+BMI Calculator made with Flutter that calculates body mass index based on users' inputs (Gender, Height, Weight). 
+
+Features theme mode switch that allows dynamic changes between dark and light theme modes.
 
 *Light mode:*
 
